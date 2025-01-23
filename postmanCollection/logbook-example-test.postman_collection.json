@@ -36,6 +36,88 @@
 			"response": []
 		},
 		{
+			"name": "Exclude path Test",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/samples/exclude",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"samples",
+						"exclude"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exclude Header Value",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-secret",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/samples/exclude",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"samples",
+						"exclude"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exclude ContentType Value",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/samples/exclude/content-type",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"samples",
+						"exclude",
+						"content-type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "PathFilter Test",
 			"request": {
 				"auth": {
