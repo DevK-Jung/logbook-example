@@ -3,6 +3,7 @@ package com.example.logbookexample.controller;
 import com.example.logbookexample.dto.ReqDto;
 import com.example.logbookexample.dto.RespDto;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/samples")
 public class SampleController {
+
+    // exclude test api: 로깅 제외
+    @GetMapping("/exclude")
+    public String exclude() {
+        return "exclude";
+    }
+
+    // exclude test api: 특정 Header 값 로깅 제외
+    @GetMapping("/exclude/header")
+    public String excludeHeader(@RequestHeader("x-secret") String xSecret) {
+        return "excludeHeader";
+    }
+
+    // exclude test api: 특정 Content-Type 로깅 제외
+    @GetMapping(value = "/exclude/content-type", consumes = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public String excludeContentType() {
+        return "excludeContentType";
+    }
 
     // queryFiltering test api: 쿼리 파라미터 Secret 값으로 대체 로깅
     @GetMapping("/query")

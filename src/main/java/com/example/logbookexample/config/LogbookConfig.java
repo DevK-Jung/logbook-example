@@ -22,8 +22,7 @@ public class LogbookConfig {
         return Logbook.builder()
                 .condition(
                         exclude( // 특정 요청 로깅 제외
-                                requestTo("/swagger-ui/**"),
-                                requestTo("/v3/api-docs/**"),
+                                requestTo("/api/samples/exclude"),
                                 contentType(MediaType.APPLICATION_OCTET_STREAM_VALUE),
                                 header("x-secret", "true")
                         )
